@@ -1,7 +1,7 @@
 package com.docteory07.mweireiteng.user;
 
-import com.docteory07.mweireiteng.user.dto.CreateUserDto;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 @RequiredArgsConstructor
@@ -9,12 +9,13 @@ import org.springframework.stereotype.Service;
 public class UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public User create(CreateUserDto dto) {
+    public User create(String username, String password, String email) {
         User user = new User(
-                dto.getUsername(),
-                dto.getPassword(),
-                dto.getEmail()
+                username,
+                passwordEncoder.encode(password),
+                email
         );
 
         return userRepository.save(user);

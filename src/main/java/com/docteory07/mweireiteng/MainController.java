@@ -9,8 +9,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 @Controller
 public class MainController {
     @GetMapping("/")
-    public ResponseEntity<String> index() {
+    public String index() {
 
-        return ResponseEntity.ok("뭬이레이텡 API 정상작동중");
+        return "index";
     }
 }
