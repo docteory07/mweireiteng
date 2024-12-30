@@ -1,5 +1,7 @@
-package com.docteory07.mweireiteng.user;
+package com.docteory07.mweireiteng.user.service;
 
+import com.docteory07.mweireiteng.user.User;
+import com.docteory07.mweireiteng.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

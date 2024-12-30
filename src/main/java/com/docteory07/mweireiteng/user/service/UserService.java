@@ -1,5 +1,7 @@
-package com.docteory07.mweireiteng.user;
+package com.docteory07.mweireiteng.user.service;
 
+import com.docteory07.mweireiteng.user.User;
+import com.docteory07.mweireiteng.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
