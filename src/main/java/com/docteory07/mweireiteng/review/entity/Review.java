@@ -7,6 +7,10 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.boot.context.properties.bind.DefaultValue;
+
+import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Getter
 @Entity
@@ -40,19 +44,26 @@ public class Review {
     @Column(nullable = false)
     private Integer recommend;
 
+    @Setter
+    private String imgName;
+
+    private LocalDateTime createdAt;
+
     @ManyToOne
     private User user;
 
     @ManyToOne
     private Restaurant restaurant;
 
-    public Review(String title, String content, int hot, int mala, int rating, int recommend, User user, Restaurant restaurant) {
+    public Review(String title, String content, int hot, int mala, int rating, int recommend, String imgName, LocalDateTime createdAt, User user, Restaurant restaurant) {
         this.title = title;
         this.content = content;
         this.hot = hot;
         this.mala = mala;
         this.rating = rating;
         this.recommend = recommend;
+        this.imgName = imgName;
+        this.createdAt = createdAt;
         this.user = user;
         this.restaurant = restaurant;
     }

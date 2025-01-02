@@ -23,7 +23,7 @@ public class UserController {
     }
 
     @PostMapping("/signup")
-    public String signup( @Valid CreateUserDto dto, BindingResult bs) {
+    public String signup(@Valid CreateUserDto dto, BindingResult bs) {
         if (bs.hasErrors()) {
             return "user/signup";
         }
