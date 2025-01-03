@@ -36,3 +36,7 @@ async function getRestaurantsBySearch() {
         console.error("Error fetching restaurants:", error);
     }
 }
+
+function createSubmit() {
+
+}

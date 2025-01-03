@@ -1,5 +1,7 @@
 package com.docteory07.mweireiteng.review;
 
+import com.docteory07.mweireiteng.ingredient.IngredientService;
+import com.docteory07.mweireiteng.ingredient.entity.Ingredient;
 import com.docteory07.mweireiteng.restaurant.Restaurant;
 import com.docteory07.mweireiteng.restaurant.RestaurantService;
 import com.docteory07.mweireiteng.review.entity.Review;
@@ -22,6 +24,7 @@ public class ReviewController {
 
     private final ReviewService reviewService;
     private final RestaurantService restaurantService;
+    private final IngredientService ingredientService;
 
     @GetMapping
     public String getReviewList(
@@ -44,7 +47,10 @@ public class ReviewController {
     @GetMapping("/create")
     public String getCreateReview(CreateReviewDto dto, Model model) {
         List<Restaurant> restaurants = restaurantService.getAllRestaurants();
+        List<Ingredient> ingredients = ingredientService.getAllIngredients();
+
         model.addAttribute("restaurants", restaurants);
+        model.addAttribute("ingredients", ingredients);
 
         return "review/create";
     }

@@ -7,3 +7,22 @@ textarea {
 input[type=submit] {
 	margin-top:10px;
 }
+
+details {
+	margin-bottom: 1rem;
+	overflow: hidden;
+}
+
+summary {
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 1.25rem;
+	padding: 0.5rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+details[open] summary {
+	color: #ffc107;
+}
